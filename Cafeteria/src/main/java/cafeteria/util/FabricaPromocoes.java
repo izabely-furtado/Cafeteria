@@ -22,30 +22,30 @@ A cafeteira “Black & White” está com a seguinte promoção:
 public class FabricaPromocoes {
     
     public static FabricaPromoCafe promoSegunda(){
-        return new FabricaPromoCafeExpresso();
+        return FabricaPromoCafeExpresso.getInstance();
     }
     
-    public static FabricaPromoCafeSemCafeina promoTerça(){
-        return new FabricaPromoCafeSemCafeina();
+    public static FabricaPromoCafe promoTerça(){
+        return FabricaPromoCafeSemCafeina.getInstance();
     }
     
     public static FabricaPromoCafe promoQuarta(){
-        return new FabricaPromoCafeExpresso();
+        return FabricaPromoCafeExpresso.getInstance();
     }
     
     public static FabricaPromoCafe promoQuinta(){
-        return new FabricaPromoCafeSemCafeina();
+        return FabricaPromoCafeSemCafeina.getInstance();
     }
     
     public static FabricaPromoCafe promoSexta(){
-        return new FabricaPromoCafeExpresso();
+        return FabricaPromoCafeExpresso.getInstance();
     }
     
     public static FabricaPromoCafe promoSabado(){
-        return new FabricaPromoCafeSemCafeina();
+        return FabricaPromoCafeSemCafeina.getInstance();
     }
     
     public static FabricaPromoCafe promoDomingo(){
-        return new FabricaPromoCappuccino();
+        return FabricaPromoCappuccino.getInstance();
     }
 }

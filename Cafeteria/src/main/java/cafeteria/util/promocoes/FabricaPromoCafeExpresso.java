@@ -15,9 +15,16 @@ import cafeteria.util.cafes.FabricaCafeExpresso;
 public class FabricaPromoCafeExpresso extends FabricaPromoCafe{
     protected FabricaCafeExpresso fabExpresso;
     
-    public FabricaPromoCafeExpresso() {
+    private FabricaPromoCafeExpresso() {
         super();
         this.fabExpresso = this.criaCafeExpresso();
+    }
+    
+    public synchronized static FabricaPromoCafe getInstance() {
+        if(fabPromoCafe == null) {
+            fabPromoCafe = new FabricaPromoCafeExpresso();
+        }
+        return fabPromoCafe;
     }
     
     @Override

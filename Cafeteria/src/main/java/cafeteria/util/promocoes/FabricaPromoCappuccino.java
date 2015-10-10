@@ -6,6 +6,7 @@
 
 package cafeteria.util.promocoes;
 
+import cafeteria.util.cafes.FabricaCafe;
 import cafeteria.util.cafes.FabricaCafeCappuccino;
 /**
  *
@@ -14,11 +15,19 @@ import cafeteria.util.cafes.FabricaCafeCappuccino;
  */
 public class FabricaPromoCappuccino extends FabricaPromoCafe{
     protected FabricaCafeCappuccino fabCappuccino;
-    public FabricaPromoCappuccino() {
+    private FabricaPromoCappuccino() {
         super();
         this.fabCappuccino = this.criaCappuccino();
         
     }
+    
+    public synchronized static FabricaPromoCafe getInstance() {
+        if(fabPromoCafe == null) {
+            fabPromoCafe = new FabricaPromoCappuccino();
+        }
+        return fabPromoCafe;
+    }
+    
     
     @Override
     public String toString(){

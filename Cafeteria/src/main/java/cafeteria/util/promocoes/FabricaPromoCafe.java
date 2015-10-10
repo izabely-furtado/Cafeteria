@@ -22,6 +22,27 @@ A cafeteira “Black & White” está com a seguinte promoção:
     Implemente o padrão de projeto que resolve esse problema. 
 */
 public abstract class FabricaPromoCafe implements FabricaCafes {
+    
+    protected static FabricaPromoCafe fabPromoCafe;
+    protected int codExpresso;
+    protected int codSemCafeina;
+    protected int codCappuccino;
+    
+    public synchronized int getCodExpresso() {
+        codExpresso = codExpresso+1;
+        return codExpresso;
+    }
+    
+    public synchronized int getCodSemCafeina() {
+        codSemCafeina = codSemCafeina+1;
+        return codSemCafeina;
+    }
+    
+    public synchronized int getCodCappuccino() {
+        codCappuccino = codCappuccino+1;
+        return codCappuccino;
+    }
+    
     @Override
     public FabricaCafeCappuccino criaCappuccino() {
         return (FabricaCafeCappuccino) FabricaCafeCappuccino.getInstance();

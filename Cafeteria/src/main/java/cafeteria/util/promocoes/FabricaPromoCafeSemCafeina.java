@@ -15,9 +15,16 @@ import cafeteria.util.cafes.FabricaCafeSemCafeina;
  */
 public class FabricaPromoCafeSemCafeina extends FabricaPromoCafe{
     protected FabricaCafeSemCafeina fabSemCafeina;
-    public FabricaPromoCafeSemCafeina() {
+    private FabricaPromoCafeSemCafeina() {
         super();
         this.fabSemCafeina = this.criaCafeSemCafeina();
+    }
+    
+    public synchronized static FabricaPromoCafe getInstance() {
+        if(fabPromoCafe == null) {
+            fabPromoCafe = new FabricaPromoCafeSemCafeina();
+        }
+        return fabPromoCafe;
     }
     
     @Override
