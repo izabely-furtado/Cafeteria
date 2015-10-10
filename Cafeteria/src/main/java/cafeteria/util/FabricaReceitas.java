@@ -15,15 +15,15 @@ import cafeteria.util.cafes.*;
 public class FabricaReceitas {
     
     public static String receitaCafeExpresso(){
-        return new FabricaCafeExpresso().toString();
+        return FabricaCafeExpresso.getInstance().toString();
     }
     
     public static String receitaCafeSemCafeina(){
-        return new FabricaCafeSemCafeina().toString();
+        return FabricaCafeSemCafeina.getInstance().toString();
     }
     
     public static String receitaCafeCappuccino(){
-        return new FabricaCafeCappuccino().toString();
+        return FabricaCafeCappuccino.getInstance().toString();
     }
     
 }

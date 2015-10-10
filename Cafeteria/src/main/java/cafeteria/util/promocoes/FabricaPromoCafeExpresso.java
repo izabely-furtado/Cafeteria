@@ -7,31 +7,24 @@
 package cafeteria.util.promocoes;
 
 import cafeteria.util.cafes.FabricaCafeExpresso;
-import java.util.HashSet;
-import java.util.Set;
-
 /**
  *
  * @author IzabelyFurtado
  *     (i) segunda-feira, quarta-feira e sexta-feira o café normal é metade do preço; 
  */
 public class FabricaPromoCafeExpresso extends FabricaPromoCafe{
+    protected FabricaCafeExpresso fabExpresso;
+    
     public FabricaPromoCafeExpresso() {
         super();
-    }
-    
-    @Override
-    public FabricaCafeExpresso criaCafeExpresso() {
-        FabricaCafeExpresso fc = new FabricaCafeExpresso();
-        fc.setPreco(this.fabExpresso.getPreco()/2);
-        return fc;
+        this.fabExpresso = this.criaCafeExpresso();
     }
     
     @Override
     public String toString(){
         return "Cafe Expresso: \n" 
               + "de R$ " + this.fabExpresso.getPreco()
-              + " por R$ " + this.criaCafeExpresso().getPreco() 
+              + " por R$ " + (this.fabExpresso.getPreco()/2) 
               + "\n";
     }
     

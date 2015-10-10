@@ -6,7 +6,6 @@
 
 package cafeteria.util.promocoes;
 
-import cafeteria.util.cafes.FabricaCafeCappuccino;
 import cafeteria.util.cafes.FabricaCafeSemCafeina;
 
 /**
@@ -15,22 +14,17 @@ import cafeteria.util.cafes.FabricaCafeSemCafeina;
  * (ii) terça-feira, quintafeira e sábado o café sem cafeína é metade do preço
  */
 public class FabricaPromoCafeSemCafeina extends FabricaPromoCafe{
+    protected FabricaCafeSemCafeina fabSemCafeina;
     public FabricaPromoCafeSemCafeina() {
         super();
-    }
-    
-    @Override
-    public FabricaCafeSemCafeina criaCafeSemCafeina() {
-        FabricaCafeSemCafeina fc = new FabricaCafeSemCafeina();
-        fc.setPreco(this.fabSemCafeina.getPreco()/2);
-        return fc;
+        this.fabSemCafeina = this.criaCafeSemCafeina();
     }
     
     @Override
     public String toString(){
         return "Cafe Sem Cafeína: \n" 
               + "de R$ " + this.fabSemCafeina.getPreco()
-              + " por R$ " + this.criaCafeSemCafeina().getPreco() 
+              + " por R$ " + this.fabSemCafeina.getPreco()/2 
               + "\n";
     }
     

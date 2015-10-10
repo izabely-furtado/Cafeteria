@@ -28,7 +28,7 @@ public class FabricaCafeCappuccino extends FabricaCafe{
     private final LeitePo leitePo;
 
     
-    public FabricaCafeCappuccino() {
+    private FabricaCafeCappuccino() {
         super(5);      
         this.acucar = this.criarAcucar();
         this.bicarbonato = this.criarBicarbonato();
@@ -38,6 +38,13 @@ public class FabricaCafeCappuccino extends FabricaCafe{
         this.leitePo = this.criarLeitePo();
     }
 
+    public synchronized static FabricaCafe getInstance() {
+        if(fabCafe == null) {
+            fabCafe = new FabricaCafeCappuccino();
+        }
+        return fabCafe;
+    }
+    
     @Override
     public final Acucar criarAcucar() {
         return new Acucar(200);

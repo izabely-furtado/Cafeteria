@@ -5,7 +5,6 @@
  */
 package cafeteria.util.cafes;
 
-import cafeteria.util.FabricaIngredientes;
 import cafeteria.cdp.*;
 
 /**
@@ -14,7 +13,27 @@ import cafeteria.cdp.*;
  */
 public abstract class FabricaCafe implements FabricaIngredientes{
     private float preco;
-    private Agua agua;
+    private final Agua agua;
+    protected static FabricaCafe fabCafe;
+    protected int codExpresso;
+    protected int codSemCafeina;
+    protected int codCappuccino;
+    
+    public synchronized int getCodExpresso() {
+        codExpresso = codExpresso+1;
+        return codExpresso;
+    }
+    
+    public synchronized int getCodSemCafeina() {
+        codSemCafeina = codSemCafeina+1;
+        return codSemCafeina;
+    }
+    
+    public synchronized int getCodCappuccino() {
+        codCappuccino = codCappuccino+1;
+        return codCappuccino;
+    }
+    
     
     //todo cafe tem agua
     FabricaCafe(float preco){
@@ -25,7 +44,7 @@ public abstract class FabricaCafe implements FabricaIngredientes{
     }
     
     //valida a inserção de preço no café
-    public final void setPreco(float valor){
+    public void setPreco(float valor){
         if(valor >= 0){
             this.preco = valor;
         }

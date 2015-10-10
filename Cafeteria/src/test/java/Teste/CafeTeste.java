@@ -51,13 +51,6 @@ public class CafeTeste {
     }
     
     @Test
-    public void escolhaCafeErrado(){
-        int val1 = 13;
-        String resultado = "";
-        assertEquals(resultado, Cafeteria.escolhaCafe(val1));
-    }
-    
-    @Test
     public void escolhaReceita(){
         int val1 = 1;
         String resultado = "escolhe a Receita";
@@ -77,20 +70,6 @@ public class CafeTeste {
         String resultado = "escolhe o Dia";
         assertEquals(resultado, Cafeteria.escolhaOpcoes(val1));
     }
-    @Test
-    public void escolhaEscolherErrado() {
-        int val1 = 13;
-        String resultado = "";
-        assertEquals(resultado, Cafeteria.escolhaOpcoes(val1));
-    }
-    
-    @Test
-    public void escolhaPromoErrado() {
-        int val1 = 13;
-        String resultado = "";
-        assertEquals(resultado, Cafeteria.escolheDiaPromo(val1));
-    }
-    
     @Test
     public void escolhaPromoDOM() {
         int val1 = 1;

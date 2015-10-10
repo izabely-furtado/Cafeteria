@@ -7,32 +7,24 @@
 package cafeteria.util.promocoes;
 
 import cafeteria.util.cafes.FabricaCafeCappuccino;
-import java.util.HashSet;
-import java.util.Set;
-
 /**
  *
  * @author IzabelyFurtado
  * (iii) domingo o cappuccino é metade do preço.
  */
 public class FabricaPromoCappuccino extends FabricaPromoCafe{
+    protected FabricaCafeCappuccino fabCappuccino;
     public FabricaPromoCappuccino() {
         super();
+        this.fabCappuccino = this.criaCappuccino();
         
-    }
-
-    @Override
-    public FabricaCafeCappuccino criaCappuccino() {
-        FabricaCafeCappuccino fc = new FabricaCafeCappuccino();
-        fc.setPreco(this.fabCappuccino.getPreco()/2);
-        return fc;
     }
     
     @Override
     public String toString(){
         return "Cappuccino: \n" 
               + "de R$ " + this.fabCappuccino.getPreco()
-              + " por R$ " + this.criaCappuccino().getPreco() 
+              + " por R$ " + this.fabCappuccino.getPreco()/2
               + "\n";
     }
     

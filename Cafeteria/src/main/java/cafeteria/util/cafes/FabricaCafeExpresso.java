@@ -21,11 +21,18 @@ public class FabricaCafeExpresso extends FabricaCafe{
     private final CafeSoluvel cafeSoluvel;
     private final LeiteLiq leiteLiq;
 
-    public FabricaCafeExpresso() {
+    private FabricaCafeExpresso() {
         super(2);
         this.acucar = this.criarAcucar();
         this.cafeSoluvel = this.criarCafeSoluvel();
         this.leiteLiq = this.criarLeiteLiq();
+    }
+    
+    public synchronized static FabricaCafe getInstance() {
+        if(fabCafe == null) {
+            fabCafe = new FabricaCafeExpresso();
+        }
+        return fabCafe;
     }
     
     @Override

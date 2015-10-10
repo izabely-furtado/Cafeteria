@@ -21,12 +21,19 @@ public class FabricaCafeSemCafeina extends FabricaCafe{
     private final LeiteLiq leiteLiq;
     private final CafeSemCafeina cafeSem;
 
-    public FabricaCafeSemCafeina() {
+    private FabricaCafeSemCafeina() {
         super(3);
         this.acucar = this.criarAcucar();
         this.leiteLiq = this.criarLeiteLiq();
         this.cafeSem = this.criarCafeSemCafeina();
         
+    }
+    
+    public synchronized static FabricaCafe getInstance() {
+        if(fabCafe == null) {
+            fabCafe = new FabricaCafeSemCafeina();
+        }
+        return fabCafe;
     }
     
     @Override
