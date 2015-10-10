@@ -9,6 +9,7 @@ package Teste;
 import cafeteria.aplication.Cafeteria;
 import cafeteria.util.FabricaPromocoes;
 import cafeteria.util.FabricaReceitas;
+import cafeteria.util.promocoes.FabricaPromoCafe;
 import org.junit.After;
 import org.junit.AfterClass;
 import static org.junit.Assert.*;
@@ -73,49 +74,49 @@ public class CafeTeste {
     @Test
     public void escolhaPromoDOM() {
         int val1 = 1;
-        String resultado = FabricaPromocoes.promoDomingo().toString();
+        FabricaPromoCafe resultado = FabricaPromocoes.promoDomingo();
         assertEquals(resultado, Cafeteria.escolheDiaPromo(val1));
     }
     
     @Test
     public void escolhaPromoSEG() {
         int val1 = 2;
-        String resultado = FabricaPromocoes.promoSegunda().toString();
+        FabricaPromoCafe resultado = FabricaPromocoes.promoSegunda();
         assertEquals(resultado, Cafeteria.escolheDiaPromo(val1));
     }
     
     @Test
     public void escolhaPromoTER() {
         int val1 = 3;
-        String resultado = FabricaPromocoes.promoTerça().toString();
+        FabricaPromoCafe resultado = FabricaPromocoes.promoTerça();
         assertEquals(resultado, Cafeteria.escolheDiaPromo(val1));
     }
     
     @Test
     public void escolhaPromoQUA() {
         int val1 = 4;
-        String resultado = FabricaPromocoes.promoQuarta().toString();
+        FabricaPromoCafe resultado = FabricaPromocoes.promoQuarta();
         assertEquals(resultado, Cafeteria.escolheDiaPromo(val1));
     }
     
     @Test
     public void escolhaPromoQUI() {
         int val1 = 5;
-        String resultado = FabricaPromocoes.promoQuinta().toString();
+        FabricaPromoCafe resultado = FabricaPromocoes.promoQuinta();
         assertEquals(resultado, Cafeteria.escolheDiaPromo(val1));
     }
     
     @Test
     public void escolhaPromoSEX() {
         int val1 = 6;
-        String resultado = FabricaPromocoes.promoSexta().toString();
+        FabricaPromoCafe resultado = FabricaPromocoes.promoSexta();
         assertEquals(resultado, Cafeteria.escolheDiaPromo(val1));
     }
     
     @Test
     public void escolhaPromoSAB() {
         int val1 = 7;
-        String resultado = FabricaPromocoes.promoSabado().toString();
+        FabricaPromoCafe resultado = FabricaPromocoes.promoSabado();
         assertEquals(resultado, Cafeteria.escolheDiaPromo(val1));
     }
     

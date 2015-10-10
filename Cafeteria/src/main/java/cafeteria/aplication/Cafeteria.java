@@ -6,6 +6,7 @@
 package cafeteria.aplication;
 
 import cafeteria.util.*;
+import cafeteria.util.promocoes.FabricaPromoCafe;
 import java.util.Scanner;
 
 /**
@@ -100,29 +101,27 @@ public class Cafeteria {
         return receita;
     }
 
-    public static String escolheDiaPromo(int opcao){
-        String dia = "";
-        
+    public static FabricaPromoCafe escolheDiaPromo(int opcao){
         if (opcao == 1) {
-            dia = FabricaPromocoes.promoDomingo().toString();
+            return FabricaPromocoes.promoDomingo();
         } 
         else if (opcao == 2) {
-            dia = FabricaPromocoes.promoSegunda().toString();
+            return FabricaPromocoes.promoSegunda();
         }
         else if (opcao == 3) {
-            dia = FabricaPromocoes.promoTerça().toString();
+            return FabricaPromocoes.promoTerça();
         }
         else if (opcao == 4) {
-            dia = FabricaPromocoes.promoQuarta().toString();
+            return FabricaPromocoes.promoQuarta();
         }
         else if (opcao == 5) {
-            dia = FabricaPromocoes.promoQuinta().toString();
+            return FabricaPromocoes.promoQuinta();
         }
         else if (opcao == 6) {
-            dia = FabricaPromocoes.promoSexta().toString();
+            return FabricaPromocoes.promoSexta();
         }
         else if (opcao == 7) {
-            dia = FabricaPromocoes.promoSabado().toString();
+            return FabricaPromocoes.promoSabado();
         }
         else {
             throw new RuntimeException("Só um palpite: \n" + 
@@ -130,7 +129,6 @@ public class Cafeteria {
                                        "Ulisses Tavares \n" +
                                        "(Dia da Semana Incorreto)");
         }
-        return dia;
     }
 
 }
