@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite failures="0" time="0.1" errors="0" skipped="0" tests="13" name="Teste.CafeTeste">
+<testsuite failures="0" time="0.125" errors="0" skipped="0" tests="13" name="Teste.CafeTeste">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.7.0_67\jre\bin"/>
@@ -63,17 +63,17 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase time="0.011" classname="Teste.CafeTeste" name="escolhaSair"/>
-  <testcase time="0.01" classname="Teste.CafeTeste" name="escolhaPromoSEG"/>
-  <testcase time="0" classname="Teste.CafeTeste" name="escolhaPromocao"/>
-  <testcase time="0" classname="Teste.CafeTeste" name="escolhaPromoSEX"/>
-  <testcase time="0.001" classname="Teste.CafeTeste" name="escolhaPromoDOM"/>
-  <testcase time="0.003" classname="Teste.CafeTeste" name="escolhaCafeSemCafeina"/>
-  <testcase time="0.001" classname="Teste.CafeTeste" name="escolhaCafeCappuccino"/>
-  <testcase time="0" classname="Teste.CafeTeste" name="escolhaReceita"/>
+  <testcase time="0.019" classname="Teste.CafeTeste" name="escolhaPromoQUA"/>
+  <testcase time="0" classname="Teste.CafeTeste" name="escolhaPromoDOM"/>
+  <testcase time="0" classname="Teste.CafeTeste" name="escolhaPromoSEG"/>
   <testcase time="0.001" classname="Teste.CafeTeste" name="escolhaPromoTER"/>
+  <testcase time="0.005" classname="Teste.CafeTeste" name="escolhaReceita"/>
+  <testcase time="0" classname="Teste.CafeTeste" name="escolhaPromoSEX"/>
+  <testcase time="0" classname="Teste.CafeTeste" name="escolhaPromocao"/>
   <testcase time="0" classname="Teste.CafeTeste" name="escolhaPromoQUI"/>
-  <testcase time="0" classname="Teste.CafeTeste" name="escolhaCafeExpresso"/>
   <testcase time="0" classname="Teste.CafeTeste" name="escolhaPromoSAB"/>
-  <testcase time="0" classname="Teste.CafeTeste" name="escolhaPromoQUA"/>
+  <testcase time="0.004" classname="Teste.CafeTeste" name="escolhaCafeCappuccino"/>
+  <testcase time="0.001" classname="Teste.CafeTeste" name="escolhaCafeSemCafeina"/>
+  <testcase time="0.001" classname="Teste.CafeTeste" name="escolhaCafeExpresso"/>
+  <testcase time="0.001" classname="Teste.CafeTeste" name="escolhaSair"/>
 </testsuite>

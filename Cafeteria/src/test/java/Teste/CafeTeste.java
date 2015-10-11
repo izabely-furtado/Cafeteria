@@ -7,8 +7,8 @@
 package Teste;
 
 import cafeteria.aplication.Cafeteria;
+import cafeteria.util.Builder.*;
 import cafeteria.util.FabricaPromocoes;
-import cafeteria.util.FabricaReceitas;
 import cafeteria.util.promocoes.FabricaPromoCafe;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -31,26 +31,27 @@ public class CafeTeste {
     }
     
     @Test
+    public void escolhaCafeCappuccino(){
+        int val1 = 3;
+        CafeBuilder resultado = CappuccinoBuilder.getInstance();
+        assertEquals(resultado, Cafeteria.escolhaCafe(val1));
+    }
+    
+    @Test
     public void escolhaCafeExpresso(){
         int val1 = 1;
-        String resultado = FabricaReceitas.receitaCafeExpresso();
+        CafeBuilder resultado = CafeExpressoBuilder.getInstance();
         assertEquals(resultado, Cafeteria.escolhaCafe(val1));
     }
     
     @Test
     public void escolhaCafeSemCafeina(){
         int val1 = 2;
-        String resultado = FabricaReceitas.receitaCafeSemCafeina();
+        CafeBuilder resultado = CafeSemCafeinaBuilder.getInstance();
         assertEquals(resultado, Cafeteria.escolhaCafe(val1));
     }
-    
-    @Test
-    public void escolhaCafeCappuccino(){
-        int val1 = 3;
-        String resultado = FabricaReceitas.receitaCafeCappuccino();
-        assertEquals(resultado, Cafeteria.escolhaCafe(val1));
-    }
-    
+   
+
     @Test
     public void escolhaReceita(){
         int val1 = 1;
