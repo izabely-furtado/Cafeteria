@@ -6,6 +6,7 @@
 package cafeteria.aplication;
 
 import cafeteria.util.*;
+import cafeteria.util.Builder.*;
 import cafeteria.util.promocoes.FabricaPromoCafe;
 import java.util.Scanner;
 
@@ -31,7 +32,7 @@ public class Cafeteria {
                                     + "2 - Café sem cafeína    \n"
                                     + "3 - Cappuccino          \n");
                 opcao = lerOpcao.nextInt();
-                System.out.println(Cafeteria.escolhaCafe(opcao));
+                Cafeteria.criando(Cafeteria.escolhaCafe(opcao));
             }
             else{
                 System.out.println("Digite o dia da semana que deseja ver a promoção: \n"
@@ -58,6 +59,13 @@ public class Cafeteria {
         
     }
 
+    public static void criando(CafeBuilder cafeEscolhido){
+        CafeteriaDirector pizzaria = new CafeteriaDirector(cafeEscolhido);
+        pizzaria.construirCafe();
+        CafeProduct cafe = pizzaria.getCafe();
+        System.out.println(cafe);
+    }
+
     public static String escolhaOpcoes(int opcao) {
         String retorno = "";
         Scanner lerOpcao = new Scanner(System.in);
@@ -80,17 +88,16 @@ public class Cafeteria {
         }
         return retorno;
     }
-    
-    public static String escolhaCafe(int opcao) {
-        String receita = "";
+
+    public static CafeBuilder escolhaCafe(int opcao) {
         if (opcao == 1) {
-            receita = FabricaReceitas.receitaCafeExpresso();
+            return CafeExpressoBuilder.getInstance();
         } 
         else if (opcao == 2) {
-            receita = FabricaReceitas.receitaCafeSemCafeina();
+            return CafeSemCafeinaBuilder.getInstance();
         } 
         else if (opcao == 3) {
-            receita = FabricaReceitas.receitaCafeCappuccino();
+            return CappuccinoBuilder.getInstance();
         } 
         else {
             throw new RuntimeException("Só um palpite: \n"
@@ -98,9 +105,8 @@ public class Cafeteria {
                     + "Ulisses Tavares \n"
                     + "(Escolha coisas possíveis)");
         }
-        return receita;
     }
-
+    
     public static FabricaPromoCafe escolheDiaPromo(int opcao){
         if (opcao == 1) {
             return FabricaPromocoes.promoDomingo();

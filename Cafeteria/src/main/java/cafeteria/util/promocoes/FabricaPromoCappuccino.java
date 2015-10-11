@@ -6,7 +6,6 @@
 
 package cafeteria.util.promocoes;
 
-import cafeteria.util.cafes.FabricaCafe;
 import cafeteria.util.cafes.FabricaCafeCappuccino;
 /**
  *

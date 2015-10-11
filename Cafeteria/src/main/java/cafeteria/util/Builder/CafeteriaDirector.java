@@ -17,12 +17,12 @@ public class CafeteriaDirector {
         this.montadora = montadora;
     }
     
-    public void construirPizza(){
+    public void construirCafe(){
         this.montadora.buildPreço();
         this.montadora.buildCafe();
     }
     
-    public CafeProduct getPizza(){
+    public CafeProduct getCafe(){
         return this.montadora.getCafe();
     }
     

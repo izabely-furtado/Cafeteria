@@ -55,7 +55,6 @@ public class FabricaCafeExpresso extends FabricaCafe{
         return super.toString() + "Café Expresso: \n" +
                this.criarAcucar().toString() +
                this.criarCafeSoluvel().toString() + 
-               this.criarLeitePo().toString() + "\n" +
-               "Preço: R$" + this.getPreco();
+               this.criarLeitePo().toString();
     }
 }

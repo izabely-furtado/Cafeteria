@@ -55,8 +55,7 @@ public class FabricaCafeSemCafeina extends FabricaCafe{
         return super.toString() + "Café Sem Cafeína: \n" +
                this.criarAcucar().toString() +
                this.criarCafeSemCafeina().toString() + 
-               this.criarLeitePo().toString() + "\n" +
-               "Preço: R$" + this.getPreco();
+               this.criarLeitePo().toString() + "\n";
     }
 
 

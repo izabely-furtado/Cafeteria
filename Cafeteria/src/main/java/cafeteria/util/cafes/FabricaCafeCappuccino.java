@@ -83,7 +83,6 @@ public class FabricaCafeCappuccino extends FabricaCafe{
                this.criarCafeSoluvel().toString() + 
                this.criarCanela().toString() + 
                this.criarChocolate().toString() +
-               this.criarLeitePo().toString() + "\n" +
-               "Preço: R$" + this.getPreco();
+               this.criarLeitePo().toString();
     }
 }

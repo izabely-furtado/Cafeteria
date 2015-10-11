@@ -19,7 +19,7 @@ public class CafeProduct {
         return this.preco;
     }
 
-    public FabricaCafe getPizza() {
+    public FabricaCafe getCafe() {
         return this.cafe;
     }
 
